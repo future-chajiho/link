@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light only">
+<meta name="format-detection" content="telephone=no,date=no,address=no,email=no">
+<meta name="x-apple-disable-message-reformatting">
+<meta name="supported-color-schemes" content="light">
+<title>Jiho Cha | Member of the National Assembly</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    color-scheme:light only;
+    --navy:#0C2340;
+    --blue:#1B4F9C;
+    --blue-soft:#EAF1FB;
+    --blue-line:#D3E1F4;
+    --ink:#0F1A2A;
+    --muted:#6B7889;
+    --bg:#F7F9FC;
+    --card:#FFFFFF;
+    --line:#E7ECF3;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter','Noto Sans KR',-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo',sans-serif;
+    display:flex;justify-content:center;
+    min-height:100vh;
+  }
+  .wrap{width:100%;max-width:440px;background:var(--bg);position:relative}
+
+  /* ── 상단 ── */
+  .hero{
+    height:188px;position:relative;overflow:hidden;
+    background:
+      radial-gradient(110% 90% at 80% 10%, rgba(140,195,255,.30) 0%, rgba(140,195,255,0) 62%),
+      linear-gradient(160deg,#2C5F9E 0%,#3C76B8 55%,#5E9AD2 100%);
+  }
+  .hero::after{
+    content:"";position:absolute;
+    right:-100px;top:-130px;width:300px;height:300px;border-radius:50%;
+    border:1px solid rgba(255,255,255,.22);
+  }
+  .hero-fade{
+    position:absolute;left:0;right:0;bottom:0;height:74px;
+    background:linear-gradient(to bottom, rgba(247,249,252,0) 0%, rgba(247,249,252,.5) 68%, rgba(247,249,252,1) 100%);
+    pointer-events:none;
+  }
+
+  .head{
+    margin-top:-62px;padding:0 24px 30px;text-align:center;position:relative;
+  }
+  .photo{
+    width:118px;height:118px;border-radius:50%;
+    margin:0 auto 16px;
+    background:#D7E2F1;
+    border:4px solid #fff;
+    box-shadow:0 6px 20px rgba(12,35,64,.16);
+    overflow:hidden;
+    display:flex;align-items:center;justify-content:center;
+    color:var(--blue);font-size:17px;font-weight:400;letter-spacing:.02em;
+  }
+  .photo img{width:100%;height:100%;object-fit:cover;display:block}
+
+  .name{font-size:27px;font-weight:700;letter-spacing:-.03em;margin:0 0 9px;color:var(--navy)}
+  .badges{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin-bottom:15px}
+  .badge{
+    font-size:11.5px;font-weight:500;letter-spacing:.01em;
+    color:var(--blue);background:var(--blue-soft);
+    border:1px solid var(--blue-line);
+    border-radius:100px;padding:5px 12px;
+  }
+  .tagline{
+    font-size:14px;color:#4A5A70;line-height:1.7;letter-spacing:-.01em;
+    max-width:310px;margin:0 auto;font-weight:400;
+  }
+
+  /* ── 섹션 ── */
+  .sec{padding:0 20px}
+  .sec-t{
+    font-size:11px;font-weight:500;color:var(--muted);
+    letter-spacing:.12em;margin:0 0 11px 4px;
+  }
+
+  .links{display:flex;flex-direction:column;gap:9px;margin-bottom:34px}
+  a.link{
+    display:flex;align-items:center;gap:13px;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:15px;
+    padding:15px;
+    text-decoration:none;color:var(--ink);
+    transition:transform .15s ease,border-color .15s ease,box-shadow .15s ease;
+  }
+  a.link:hover{transform:translateY(-1px);border-color:var(--blue-line);box-shadow:0 5px 16px rgba(12,35,64,.07)}
+  a.link:active{transform:translateY(0)}
+  .ico{
+    width:38px;height:38px;flex:0 0 38px;border-radius:11px;
+    background:var(--blue-soft);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .ico svg{width:20px;height:20px;display:block}
+  .txt{flex:1;min-width:0}
+  .t1{display:block;font-size:15px;font-weight:500;letter-spacing:-.01em;line-height:1.35}
+  .t2{display:block;font-size:11.5px;color:var(--muted);margin-top:1px;font-weight:300;
+      white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .chev{color:#B9C5D6;flex:0 0 auto}
+  .chev svg{width:15px;height:15px;display:block}
+
+  /* ── 후원 ── */
+  .fund{
+    background:linear-gradient(160deg,#143C70 0%,#1B4F9C 100%);
+    border-radius:16px;padding:19px 19px 17px;margin-bottom:34px;
+    color:#fff;position:relative;overflow:hidden;
+  }
+  .fund::after{
+    content:"";position:absolute;right:-50px;bottom:-70px;
+    width:170px;height:170px;border-radius:50%;background:rgba(255,255,255,.06);
+  }
+  .acct i{font-style:normal;color:inherit}
+  .fund,.fund *{color:#fff}
+  .fund-t{font-size:12.5px;font-weight:500;letter-spacing:.02em;color:rgba(255,255,255,.85);margin-bottom:9px;position:relative}
+  .acct{font-size:17px;font-weight:700;letter-spacing:-.01em;color:#fff;margin-bottom:5px;position:relative}
+  .holder{font-size:11.5px;color:rgba(255,255,255,.76);font-weight:300;margin-bottom:14px;position:relative}
+  .fbtn{
+    width:100%;border:none;border-radius:10px;
+    background:rgba(255,255,255,.14);
+    border:1px solid rgba(255,255,255,.22);
+    color:#fff;font-family:inherit;font-size:13px;font-weight:500;
+    padding:11px;cursor:pointer;position:relative;
+    transition:background .15s ease;
+  }
+  .fbtn:hover{background:rgba(255,255,255,.22)}
+  .fund a,.fund a:link,.fund a:visited,.fund a[href^="tel"]{color:#fff !important;text-decoration:none !important}
+  .fbtn.done{background:rgba(255,255,255,.95);color:#143C70;border-color:#fff}
+
+  /* ── 연락 ── */
+  .contact{
+    background:var(--card);border:1px solid var(--line);border-radius:15px;
+    padding:2px 16px;margin-bottom:28px;
+  }
+  .row{display:flex;align-items:center;gap:11px;padding:12px 0;border-bottom:1px solid var(--line)}
+  .row:last-child{border-bottom:none}
+  .lb{font-size:10.5px;color:var(--muted);width:56px;flex:0 0 56px;font-weight:400;line-height:1.4}
+  .vl{font-size:13px;flex:1;min-width:0;word-break:break-all;font-weight:300}
+  .vl a{color:var(--ink);text-decoration:none}
+  .cp{
+    border:1px solid var(--line);background:transparent;border-radius:7px;
+    font-family:inherit;font-size:10.5px;color:var(--muted);
+    padding:5px 9px;cursor:pointer;flex:0 0 auto;transition:all .15s ease;
+  }
+  .cp:hover{border-color:var(--blue-line);color:var(--blue)}
+  .cp.done{border-color:var(--blue);color:var(--blue);background:var(--blue-soft)}
+
+  .bio{
+    background:var(--card);border:1px solid var(--line);border-radius:15px;
+    padding:17px 18px;margin-bottom:34px;
+  }
+  .bio li{
+    list-style:none;font-size:12.8px;line-height:1.55;color:#33415A;
+    padding:7px 0 7px 15px;position:relative;font-weight:400;
+  }
+  .bio ul{margin:0;padding:0}
+  .bio li::before{
+    content:"";position:absolute;left:0;top:14px;
+    width:5px;height:5px;border-radius:50%;background:#1B4F9C;opacity:.55;
+  }
+  .bio li.now{font-weight:600;color:#0F1A2A}
+  .bio li em{display:block;font-style:normal;font-weight:400;font-size:11.8px;
+    color:var(--muted);margin-top:2px}
+  .bio .edu{margin:13px 0 0;padding-top:12px;border-top:1px solid var(--line);
+    font-size:11.3px;line-height:1.6;color:var(--muted);font-weight:300}
+  .name .deg{display:block;font-size:12.5px;font-weight:400;letter-spacing:.06em;
+    color:var(--muted);margin-top:6px}
+  .foot{
+    text-align:center;font-size:10.5px;color:#9AA6B6;
+    letter-spacing:.03em;line-height:1.9;padding:0 20px 44px;font-weight:300;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <div class="hero-fade"></div>
+  </div>
+
+  <div class="head">
+    <div class="photo" id="photo"><img src="photo.jpg" alt="Jiho Cha"></div>
+    <h1 class="name">Jiho Cha<span class="deg">M.D., Ph.D.</span></h1>
+    <div class="badges">
+      <span class="badge">Member of the National Assembly</span>
+      <span class="badge">Osan, Gyeonggi</span>
+      <span class="badge">Foreign Affairs &amp; Unification</span>
+    </div>
+    <p class="tagline">Physician, global health scholar,<br>and field humanitarian.</p>
+  </div>
+
+  <div class="sec">
+
+    <div class="bio">
+      <ul>
+        <li class="now">Member of the National Assembly of the Republic of Korea<em>Committee on Foreign Affairs and Unification</em></li>
+        <li>Associate Professor, Moon Soul Graduate School of Future Strategy, KAIST</li>
+        <li>Associate Professor, Humanitarian and Conflict Response Institute, University of Manchester</li>
+        <li>Faculty Associate, Bloomberg School of Public Health, Johns Hopkins University</li>
+        <li>M&#233;decins Sans Fronti&#232;res &#183; World Health Organization &#183; IOM &#183; Human Rights Watch</li>
+      </ul>
+      <p class="edu">Ph.D. International Health, Johns Hopkins University&#8194;&#183;&#8194;M.Sc. Forced Migration, University of Oxford&#8194;&#183;&#8194;M.D. Dong-A University</p>
+    </div>
+
+    <div class="links">
+
+      <a class="link" href="https://x.com/chajiho11956" target="_blank" rel="noopener">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#1B4F9C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.2 4.2l15.6 15.6M19.8 4.2L4.2 19.8"/></svg></span>
+        <span class="txt"><span class="t1">X</span></span>
+        <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a class="link" href="https://instagram.com/chajiho_oh" target="_blank" rel="noopener">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#1B4F9C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5.2"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1.05" fill="#1B4F9C" stroke="none"/></svg></span>
+        <span class="txt"><span class="t1">Instagram</span></span>
+        <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+      </a>
+
+    </div>
+
+    <div class="contact">
+      <div class="row">
+        <span class="lb">Email</span>
+        <span class="vl"><a href="mailto:chajiho@assembly.go.kr">chajiho@assembly.go.kr</a></span>
+        <button class="cp" data-v="chajiho@assembly.go.kr">Copy</button>
+      </div>
+      <div class="row">
+        <span class="lb">Phone</span>
+        <span class="vl">+82 2<i>-</i>784<i>-</i>4364</span>
+        <button class="cp" data-v="+82-2-784-4364">Copy</button>
+      </div>
+      <div class="row">
+        <span class="lb">Office</span>
+        <span class="vl">Room 802, National Assembly Members&#8217; Office Building, 1 Uisadang-daero, Yeongdeungpo-gu, Seoul 07233, Republic of Korea</span>
+        <button class="cp" data-v="Room 802, National Assembly Members' Office Building, 1 Uisadang-daero, Yeongdeungpo-gu, Seoul 07233, Republic of Korea">Copy</button>
+      </div>
+      <div class="row">
+        <span class="lb">District<br>Office</span>
+        <span class="vl">4F, 251 Gyeonggi-daero, Osan-si, Gyeonggi-do, Republic of Korea</span>
+        <button class="cp" data-v="4F, 251 Gyeonggi-daero, Osan-si, Gyeonggi-do, Republic of Korea">Copy</button>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="foot">Jiho Cha, Member of the National Assembly<br>&#169; 2026</p>
+
+</div>
+
+<script>
+document.querySelectorAll('.cp').forEach(function(b){
+  b.addEventListener('click', function(){
+    var v = b.getAttribute('data-v');
+    try{
+      navigator.clipboard.writeText(v).then(function(){
+        b.textContent='Copied'; b.classList.add('done');
+        setTimeout(function(){ b.textContent='Copy'; b.classList.remove('done'); }, 1500);
+      }).catch(function(){ b.textContent='Failed'; setTimeout(function(){b.textContent='Copy';},1500); });
+    }catch(e){ b.textContent='Failed'; setTimeout(function(){b.textContent='Copy';},1500); }
+  });
+});
+</script>
+</body>
+</html>
