@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>차지호 국회의원</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0C2340;
+    --blue:#1B4F9C;
+    --blue-soft:#EAF1FB;
+    --blue-line:#D3E1F4;
+    --ink:#0F1A2A;
+    --muted:#6B7889;
+    --bg:#F7F9FC;
+    --card:#FFFFFF;
+    --line:#E7ECF3;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Noto Sans KR',-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo',sans-serif;
+    display:flex;justify-content:center;
+    min-height:100vh;
+  }
+  .wrap{width:100%;max-width:440px;background:var(--bg);position:relative}
+
+  /* ── 상단 ── */
+  .hero{
+    height:188px;position:relative;overflow:hidden;
+    background:
+      radial-gradient(110% 90% at 80% 10%, rgba(140,195,255,.30) 0%, rgba(140,195,255,0) 62%),
+      linear-gradient(160deg,#2C5F9E 0%,#3C76B8 55%,#5E9AD2 100%);
+  }
+  .hero::after{
+    content:"";position:absolute;
+    right:-100px;top:-130px;width:300px;height:300px;border-radius:50%;
+    border:1px solid rgba(255,255,255,.22);
+  }
+  .hero-fade{
+    position:absolute;left:0;right:0;bottom:0;height:74px;
+    background:linear-gradient(to bottom, rgba(247,249,252,0) 0%, rgba(247,249,252,.5) 68%, rgba(247,249,252,1) 100%);
+    pointer-events:none;
+  }
+
+  .head{
+    margin-top:-62px;padding:0 24px 30px;text-align:center;position:relative;
+  }
+  .photo{
+    width:118px;height:118px;border-radius:50%;
+    margin:0 auto 16px;
+    background:#D7E2F1;
+    border:4px solid #fff;
+    box-shadow:0 6px 20px rgba(12,35,64,.16);
+    overflow:hidden;
+    display:flex;align-items:center;justify-content:center;
+    color:var(--blue);font-size:17px;font-weight:400;letter-spacing:.02em;
+  }
+  .photo img{width:100%;height:100%;object-fit:cover;display:block}
+
+  .name{font-size:27px;font-weight:700;letter-spacing:-.03em;margin:0 0 9px;color:var(--navy)}
+  .badges{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin-bottom:15px}
+  .badge{
+    font-size:11.5px;font-weight:500;letter-spacing:.01em;
+    color:var(--blue);background:var(--blue-soft);
+    border:1px solid var(--blue-line);
+    border-radius:100px;padding:5px 12px;
+  }
+  .tagline{
+    font-size:14px;color:#4A5A70;line-height:1.7;letter-spacing:-.01em;
+    max-width:310px;margin:0 auto;font-weight:400;
+  }
+
+  /* ── 섹션 ── */
+  .sec{padding:0 20px}
+  .sec-t{
+    font-size:11px;font-weight:500;color:var(--muted);
+    letter-spacing:.12em;margin:0 0 11px 4px;
+  }
+
+  .links{display:flex;flex-direction:column;gap:9px;margin-bottom:26px}
+  a.link{
+    display:flex;align-items:center;gap:13px;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:15px;
+    padding:15px;
+    text-decoration:none;color:var(--ink);
+    transition:transform .15s ease,border-color .15s ease,box-shadow .15s ease;
+  }
+  a.link:hover{transform:translateY(-1px);border-color:var(--blue-line);box-shadow:0 5px 16px rgba(12,35,64,.07)}
+  a.link:active{transform:translateY(0)}
+  .ico{
+    width:38px;height:38px;flex:0 0 38px;border-radius:11px;
+    background:var(--blue-soft);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .ico svg{width:20px;height:20px;display:block}
+  .txt{flex:1;min-width:0}
+  .t1{display:block;font-size:15px;font-weight:500;letter-spacing:-.01em;line-height:1.35}
+  .t2{display:block;font-size:11.5px;color:var(--muted);margin-top:1px;font-weight:300;
+      white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .chev{color:#B9C5D6;flex:0 0 auto}
+  .chev svg{width:15px;height:15px;display:block}
+
+  /* ── 후원 ── */
+  .fund{
+    background:linear-gradient(160deg,#143C70 0%,#1B4F9C 100%);
+    border-radius:16px;padding:19px 19px 17px;margin-bottom:26px;
+    color:#fff;position:relative;overflow:hidden;
+  }
+  .fund::after{
+    content:"";position:absolute;right:-50px;bottom:-70px;
+    width:170px;height:170px;border-radius:50%;background:rgba(255,255,255,.06);
+  }
+  .fund-t{font-size:12.5px;font-weight:500;letter-spacing:.02em;opacity:.82;margin-bottom:9px;position:relative}
+  .acct{font-size:17px;font-weight:700;letter-spacing:-.01em;margin-bottom:5px;position:relative}
+  .holder{font-size:11.5px;opacity:.72;font-weight:300;margin-bottom:14px;position:relative}
+  .fbtn{
+    width:100%;border:none;border-radius:10px;
+    background:rgba(255,255,255,.14);
+    border:1px solid rgba(255,255,255,.22);
+    color:#fff;font-family:inherit;font-size:13px;font-weight:500;
+    padding:11px;cursor:pointer;position:relative;
+    transition:background .15s ease;
+  }
+  .fbtn:hover{background:rgba(255,255,255,.22)}
+  .fbtn.done{background:#fff;color:var(--blue);border-color:#fff}
+
+  /* ── 연락 ── */
+  .contact{
+    background:var(--card);border:1px solid var(--line);border-radius:15px;
+    padding:2px 16px;margin-bottom:28px;
+  }
+  .row{display:flex;align-items:center;gap:11px;padding:12px 0;border-bottom:1px solid var(--line)}
+  .row:last-child{border-bottom:none}
+  .lb{font-size:11px;color:var(--muted);width:42px;flex:0 0 42px;font-weight:400;line-height:1.4}
+  .vl{font-size:13px;flex:1;min-width:0;word-break:break-all;font-weight:300}
+  .vl a{color:var(--ink);text-decoration:none}
+  .cp{
+    border:1px solid var(--line);background:transparent;border-radius:7px;
+    font-family:inherit;font-size:10.5px;color:var(--muted);
+    padding:5px 9px;cursor:pointer;flex:0 0 auto;transition:all .15s ease;
+  }
+  .cp:hover{border-color:var(--blue-line);color:var(--blue)}
+  .cp.done{border-color:var(--blue);color:var(--blue);background:var(--blue-soft)}
+
+  .foot{
+    text-align:center;font-size:10.5px;color:#9AA6B6;
+    letter-spacing:.03em;line-height:1.9;padding:0 20px 44px;font-weight:300;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <div class="hero-fade"></div>
+  </div>
+
+  <div class="head">
+    <div class="photo" id="photo"><img src="photo.jpg" alt="차지호 국회의원"></div>
+    <h1 class="name">차지호</h1>
+    <div class="badges">
+      <span class="badge">제22대 국회의원</span>
+      <span class="badge">경기 오산</span>
+    </div>
+    <p class="tagline">따뜻한 미래설계자 차지호</p>
+  </div>
+
+  <div class="sec">
+
+    <p class="sec-t">CHANNELS</p>
+    <div class="links">
+
+      <a class="link" href="https://www.youtube.com/@future_chajiho" target="_blank" rel="noopener">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#1B4F9C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="4.4"/><path d="M10.3 9.4l4.8 2.6-4.8 2.6z" fill="#1B4F9C" stroke="none"/></svg></span>
+        <span class="txt"><span class="t1">유튜브</span></span>
+        <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a class="link" href="https://instagram.com/chajiho_oh" target="_blank" rel="noopener">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#1B4F9C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5.2"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1.05" fill="#1B4F9C" stroke="none"/></svg></span>
+        <span class="txt"><span class="t1">인스타그램</span></span>
+        <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a class="link" href="https://www.facebook.com/osanchajiho/" target="_blank" rel="noopener">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#1B4F9C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5.2"/><path d="M14.9 7.9h-1.3c-1 0-1.7.7-1.7 1.7v1.6h2.9"/><path d="M11.9 11.2v5.1"/><path d="M9.5 11.2h2.4"/></svg></span>
+        <span class="txt"><span class="t1">페이스북</span></span>
+        <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a class="link" href="https://x.com/chajiho11956" target="_blank" rel="noopener">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#1B4F9C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.2 4.2l15.6 15.6M19.8 4.2L4.2 19.8"/></svg></span>
+        <span class="txt"><span class="t1">엑스</span></span>
+        <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a class="link" href="https://blog.naver.com/chajiho5301" target="_blank" rel="noopener">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#1B4F9C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 4.5h10L19.5 9.5v10h-15z"/><path d="M14.5 4.5v5h5"/><path d="M8 13.5h7M8 16.5h4.5"/></svg></span>
+        <span class="txt"><span class="t1">블로그</span></span>
+        <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+      </a>
+
+    </div>
+
+    <p class="sec-t">SUPPORT</p>
+    <div class="fund">
+      <div class="fund-t">후원계좌</div>
+      <div class="acct">농협 301-0346-4145-51</div>
+      <div class="holder">예금주 · 국회의원차지호후원회</div>
+      <button class="fbtn" id="fcopy">계좌번호 복사하기</button>
+    </div>
+
+    <p class="sec-t">CONTACT</p>
+    <div class="contact">
+      <div class="row">
+        <span class="lb">전화</span>
+        <span class="vl"><a href="tel:0227844364">02-784-4364</a></span>
+        <button class="cp" data-v="02-784-4364">복사</button>
+      </div>
+      <div class="row">
+        <span class="lb">이메일</span>
+        <span class="vl"><a href="mailto:chajiho@assembly.go.kr">chajiho@assembly.go.kr</a></span>
+        <button class="cp" data-v="chajiho@assembly.go.kr">복사</button>
+      </div>
+      <div class="row">
+        <span class="lb">의원실</span>
+        <span class="vl">서울 영등포구 의사당대로 1 국회의원회관 802호</span>
+        <button class="cp" data-v="서울 영등포구 의사당대로 1 국회의원회관 802호">복사</button>
+      </div>
+      <div class="row">
+        <span class="lb">지역<br>사무소</span>
+        <span class="vl">경기도 오산시 경기대로 251 4층</span>
+        <button class="cp" data-v="경기도 오산시 경기대로 251 4층">복사</button>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="foot">국회의원 차지호<br>© 2026</p>
+
+</div>
+
+<script>
+function flash(btn, label, done){
+  var old = btn.textContent;
+  btn.textContent = label; btn.classList.add('done');
+  setTimeout(function(){ btn.textContent = done; btn.classList.remove('done'); }, 1500);
+}
+function copy(btn, v, okLabel, backLabel){
+  try{
+    navigator.clipboard.writeText(v).then(function(){
+      flash(btn, okLabel, backLabel);
+    }).catch(function(){ btn.textContent='복사 실패'; setTimeout(function(){btn.textContent=backLabel;},1500); });
+  }catch(e){ btn.textContent='복사 실패'; setTimeout(function(){btn.textContent=backLabel;},1500); }
+}
+document.querySelectorAll('.cp').forEach(function(b){
+  b.addEventListener('click', function(){ copy(b, b.getAttribute('data-v'), '완료', '복사'); });
+});
+var f = document.getElementById('fcopy');
+f.addEventListener('click', function(){ copy(f, '301-0346-4145-51', '복사되었습니다', '계좌번호 복사하기'); });
+</script>
+</body>
+</html>
